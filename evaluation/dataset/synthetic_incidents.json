@@ -1,0 +1,4014 @@
+[
+  {
+    "case_id": "SYN-001",
+    "incident": {
+      "id": "INC-SYN-001",
+      "title": "Database Regression investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-02T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "database_regression",
+    "ground_truth_terms": [
+      "database regression",
+      "Database Regression",
+      "database",
+      "regression"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0001",
+        "type": "LOG",
+        "source": "checkout-api query",
+        "timestamp": "2025-01-02T14:01:00+00:00",
+        "content": "checkout-api ERROR Database query timeout on /checkout; query duration increased after index change; synthetic_case=1; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0002",
+        "type": "COMMIT",
+        "source": "commit query change",
+        "timestamp": "2025-01-02T14:03:00+00:00",
+        "content": "perf: replace checkout query join; changed_files=services/checkout/sql.py; synthetic_case=1; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0003",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-02T14:05:00+00:00",
+        "content": "metric_name=latency value=2.8 service=checkout-api; p95 latency is above baseline; synthetic_case=1; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0004",
+        "type": "METRIC",
+        "source": "database CPU healthy",
+        "timestamp": "2025-01-02T14:07:00+00:00",
+        "content": "metric_name=db_cpu value=18 service=checkout-api; database CPU is healthy and unchanged; synthetic_case=1; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0005",
+        "type": "LOG",
+        "source": "normal cache",
+        "timestamp": "2025-01-02T14:09:00+00:00",
+        "content": "INFO Cache hit rate is normal for cart-summary; synthetic_case=1; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0006",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-02T14:11:00+00:00",
+        "content": "Issue: email preview has a minor layout mismatch; synthetic_case=1; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0001",
+      "EVID-0002",
+      "EVID-0003"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0004"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0005",
+      "EVID-0006"
+    ]
+  },
+  {
+    "case_id": "SYN-002",
+    "incident": {
+      "id": "INC-SYN-002",
+      "title": "Database Regression investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-03T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "database_regression",
+    "ground_truth_terms": [
+      "database regression",
+      "Database Regression",
+      "database",
+      "regression"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0007",
+        "type": "LOG",
+        "source": "checkout-api query",
+        "timestamp": "2025-01-03T14:02:00+00:00",
+        "content": "checkout-api ERROR Database query timeout on /checkout; query duration increased after index change; synthetic_case=2; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0008",
+        "type": "COMMIT",
+        "source": "commit query change",
+        "timestamp": "2025-01-03T14:04:00+00:00",
+        "content": "perf: replace checkout query join; changed_files=services/checkout/sql.py; synthetic_case=2; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0009",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-03T14:06:00+00:00",
+        "content": "metric_name=latency value=2.8 service=checkout-api; p95 latency is above baseline; synthetic_case=2; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0010",
+        "type": "METRIC",
+        "source": "database CPU healthy",
+        "timestamp": "2025-01-03T14:08:00+00:00",
+        "content": "metric_name=db_cpu value=18 service=checkout-api; database CPU is healthy and unchanged; synthetic_case=2; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0011",
+        "type": "LOG",
+        "source": "normal cache",
+        "timestamp": "2025-01-03T14:10:00+00:00",
+        "content": "INFO Cache hit rate is normal for cart-summary; synthetic_case=2; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0012",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-03T14:12:00+00:00",
+        "content": "Issue: email preview has a minor layout mismatch; synthetic_case=2; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0007",
+      "EVID-0008",
+      "EVID-0009"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0010"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0011",
+      "EVID-0012"
+    ]
+  },
+  {
+    "case_id": "SYN-003",
+    "incident": {
+      "id": "INC-SYN-003",
+      "title": "Database Regression investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-04T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "database_regression",
+    "ground_truth_terms": [
+      "database regression",
+      "Database Regression",
+      "database",
+      "regression"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0013",
+        "type": "LOG",
+        "source": "checkout-api query",
+        "timestamp": "2025-01-04T14:03:00+00:00",
+        "content": "checkout-api ERROR Database query timeout on /checkout; query duration increased after index change; synthetic_case=3; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0014",
+        "type": "COMMIT",
+        "source": "commit query change",
+        "timestamp": "2025-01-04T14:05:00+00:00",
+        "content": "perf: replace checkout query join; changed_files=services/checkout/sql.py; synthetic_case=3; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0015",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-04T14:07:00+00:00",
+        "content": "metric_name=latency value=2.8 service=checkout-api; p95 latency is above baseline; synthetic_case=3; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0016",
+        "type": "METRIC",
+        "source": "database CPU healthy",
+        "timestamp": "2025-01-04T14:09:00+00:00",
+        "content": "metric_name=db_cpu value=18 service=checkout-api; database CPU is healthy and unchanged; synthetic_case=3; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0017",
+        "type": "LOG",
+        "source": "normal cache",
+        "timestamp": "2025-01-04T14:11:00+00:00",
+        "content": "INFO Cache hit rate is normal for cart-summary; synthetic_case=3; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0018",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-04T14:13:00+00:00",
+        "content": "Issue: email preview has a minor layout mismatch; synthetic_case=3; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0013",
+      "EVID-0014",
+      "EVID-0015"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0016"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0017",
+      "EVID-0018"
+    ]
+  },
+  {
+    "case_id": "SYN-004",
+    "incident": {
+      "id": "INC-SYN-004",
+      "title": "Database Regression investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-05T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "database_regression",
+    "ground_truth_terms": [
+      "database regression",
+      "Database Regression",
+      "database",
+      "regression"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0019",
+        "type": "LOG",
+        "source": "checkout-api query",
+        "timestamp": "2025-01-05T14:04:00+00:00",
+        "content": "checkout-api ERROR Database query timeout on /checkout; query duration increased after index change; synthetic_case=4; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0020",
+        "type": "COMMIT",
+        "source": "commit query change",
+        "timestamp": "2025-01-05T14:06:00+00:00",
+        "content": "perf: replace checkout query join; changed_files=services/checkout/sql.py; synthetic_case=4; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0021",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-05T14:08:00+00:00",
+        "content": "metric_name=latency value=2.8 service=checkout-api; p95 latency is above baseline; synthetic_case=4; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0022",
+        "type": "METRIC",
+        "source": "database CPU healthy",
+        "timestamp": "2025-01-05T14:10:00+00:00",
+        "content": "metric_name=db_cpu value=18 service=checkout-api; database CPU is healthy and unchanged; synthetic_case=4; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0023",
+        "type": "LOG",
+        "source": "normal cache",
+        "timestamp": "2025-01-05T14:12:00+00:00",
+        "content": "INFO Cache hit rate is normal for cart-summary; synthetic_case=4; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0024",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-05T14:14:00+00:00",
+        "content": "Issue: email preview has a minor layout mismatch; synthetic_case=4; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0019",
+      "EVID-0020",
+      "EVID-0021"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0022"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0023",
+      "EVID-0024"
+    ]
+  },
+  {
+    "case_id": "SYN-005",
+    "incident": {
+      "id": "INC-SYN-005",
+      "title": "Configuration Error investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-06T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "configuration_error",
+    "ground_truth_terms": [
+      "configuration error",
+      "Configuration Error",
+      "configuration",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0025",
+        "type": "DEPLOYMENT",
+        "source": "timeout config",
+        "timestamp": "2025-01-06T14:01:00+00:00",
+        "content": "deployment version=v4.2 changed DATABASE_TIMEOUT from 30s to 3s; service=checkout-api; synthetic_case=5; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0026",
+        "type": "LOG",
+        "source": "config validation",
+        "timestamp": "2025-01-06T14:03:00+00:00",
+        "content": "ERROR configuration validation: upstream timeout setting is invalid; synthetic_case=5; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0027",
+        "type": "COMMIT",
+        "source": "environment variable",
+        "timestamp": "2025-01-06T14:05:00+00:00",
+        "content": "chore: rename environment variable DB_TIMEOUT to DATABASE_TIMEOUT; synthetic_case=5; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0028",
+        "type": "LOG",
+        "source": "configuration matches",
+        "timestamp": "2025-01-06T14:07:00+00:00",
+        "content": "INFO active configuration matches last known-good values; no config drift detected; synthetic_case=5; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0029",
+        "type": "METRIC",
+        "source": "cpu 37",
+        "timestamp": "2025-01-06T14:09:00+00:00",
+        "content": "metric_name=cpu value=37 service=checkout-api; synthetic_case=5; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0030",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-06T14:11:00+00:00",
+        "content": "Issue: add an export option to the admin report; synthetic_case=5; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0025",
+      "EVID-0026",
+      "EVID-0027"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0028"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0029",
+      "EVID-0030"
+    ]
+  },
+  {
+    "case_id": "SYN-006",
+    "incident": {
+      "id": "INC-SYN-006",
+      "title": "Configuration Error investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-07T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "configuration_error",
+    "ground_truth_terms": [
+      "configuration error",
+      "Configuration Error",
+      "configuration",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0031",
+        "type": "DEPLOYMENT",
+        "source": "timeout config",
+        "timestamp": "2025-01-07T14:02:00+00:00",
+        "content": "deployment version=v4.2 changed DATABASE_TIMEOUT from 30s to 3s; service=checkout-api; synthetic_case=6; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0032",
+        "type": "LOG",
+        "source": "config validation",
+        "timestamp": "2025-01-07T14:04:00+00:00",
+        "content": "ERROR configuration validation: upstream timeout setting is invalid; synthetic_case=6; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0033",
+        "type": "COMMIT",
+        "source": "environment variable",
+        "timestamp": "2025-01-07T14:06:00+00:00",
+        "content": "chore: rename environment variable DB_TIMEOUT to DATABASE_TIMEOUT; synthetic_case=6; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0034",
+        "type": "LOG",
+        "source": "configuration matches",
+        "timestamp": "2025-01-07T14:08:00+00:00",
+        "content": "INFO active configuration matches last known-good values; no config drift detected; synthetic_case=6; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0035",
+        "type": "METRIC",
+        "source": "cpu 37",
+        "timestamp": "2025-01-07T14:10:00+00:00",
+        "content": "metric_name=cpu value=37 service=checkout-api; synthetic_case=6; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0036",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-07T14:12:00+00:00",
+        "content": "Issue: add an export option to the admin report; synthetic_case=6; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0031",
+      "EVID-0032",
+      "EVID-0033"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0034"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0035",
+      "EVID-0036"
+    ]
+  },
+  {
+    "case_id": "SYN-007",
+    "incident": {
+      "id": "INC-SYN-007",
+      "title": "Configuration Error investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-08T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "configuration_error",
+    "ground_truth_terms": [
+      "configuration error",
+      "Configuration Error",
+      "configuration",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0037",
+        "type": "DEPLOYMENT",
+        "source": "timeout config",
+        "timestamp": "2025-01-08T14:03:00+00:00",
+        "content": "deployment version=v4.2 changed DATABASE_TIMEOUT from 30s to 3s; service=checkout-api; synthetic_case=7; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0038",
+        "type": "LOG",
+        "source": "config validation",
+        "timestamp": "2025-01-08T14:05:00+00:00",
+        "content": "ERROR configuration validation: upstream timeout setting is invalid; synthetic_case=7; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0039",
+        "type": "COMMIT",
+        "source": "environment variable",
+        "timestamp": "2025-01-08T14:07:00+00:00",
+        "content": "chore: rename environment variable DB_TIMEOUT to DATABASE_TIMEOUT; synthetic_case=7; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0040",
+        "type": "LOG",
+        "source": "configuration matches",
+        "timestamp": "2025-01-08T14:09:00+00:00",
+        "content": "INFO active configuration matches last known-good values; no config drift detected; synthetic_case=7; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0041",
+        "type": "METRIC",
+        "source": "cpu 37",
+        "timestamp": "2025-01-08T14:11:00+00:00",
+        "content": "metric_name=cpu value=37 service=checkout-api; synthetic_case=7; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0042",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-08T14:13:00+00:00",
+        "content": "Issue: add an export option to the admin report; synthetic_case=7; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0037",
+      "EVID-0038",
+      "EVID-0039"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0040"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0041",
+      "EVID-0042"
+    ]
+  },
+  {
+    "case_id": "SYN-008",
+    "incident": {
+      "id": "INC-SYN-008",
+      "title": "Configuration Error investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-09T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "configuration_error",
+    "ground_truth_terms": [
+      "configuration error",
+      "Configuration Error",
+      "configuration",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0043",
+        "type": "DEPLOYMENT",
+        "source": "timeout config",
+        "timestamp": "2025-01-09T14:04:00+00:00",
+        "content": "deployment version=v4.2 changed DATABASE_TIMEOUT from 30s to 3s; service=checkout-api; synthetic_case=8; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0044",
+        "type": "LOG",
+        "source": "config validation",
+        "timestamp": "2025-01-09T14:06:00+00:00",
+        "content": "ERROR configuration validation: upstream timeout setting is invalid; synthetic_case=8; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0045",
+        "type": "COMMIT",
+        "source": "environment variable",
+        "timestamp": "2025-01-09T14:08:00+00:00",
+        "content": "chore: rename environment variable DB_TIMEOUT to DATABASE_TIMEOUT; synthetic_case=8; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0046",
+        "type": "LOG",
+        "source": "configuration matches",
+        "timestamp": "2025-01-09T14:10:00+00:00",
+        "content": "INFO active configuration matches last known-good values; no config drift detected; synthetic_case=8; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0047",
+        "type": "METRIC",
+        "source": "cpu 37",
+        "timestamp": "2025-01-09T14:12:00+00:00",
+        "content": "metric_name=cpu value=37 service=checkout-api; synthetic_case=8; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0048",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-09T14:14:00+00:00",
+        "content": "Issue: add an export option to the admin report; synthetic_case=8; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0043",
+      "EVID-0044",
+      "EVID-0045"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0046"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0047",
+      "EVID-0048"
+    ]
+  },
+  {
+    "case_id": "SYN-009",
+    "incident": {
+      "id": "INC-SYN-009",
+      "title": "External Api Failure investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-10T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "external_api_failure",
+    "ground_truth_terms": [
+      "external api failure",
+      "External Api Failure",
+      "external",
+      "api",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0049",
+        "type": "LOG",
+        "source": "upstream api 503",
+        "timestamp": "2025-01-10T14:01:00+00:00",
+        "content": "ERROR upstream api returned HTTP 503 from payment-provider; synthetic_case=9; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0050",
+        "type": "ISSUE",
+        "source": "provider outage",
+        "timestamp": "2025-01-10T14:03:00+00:00",
+        "content": "Issue: payment provider intermittent outage; requests timing out; synthetic_case=9; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0051",
+        "type": "METRIC",
+        "source": "external latency",
+        "timestamp": "2025-01-10T14:05:00+00:00",
+        "content": "metric_name=latency value=4.1 service=checkout-api; external call latency elevated; synthetic_case=9; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0052",
+        "type": "ISSUE",
+        "source": "provider healthy",
+        "timestamp": "2025-01-10T14:07:00+00:00",
+        "content": "Status update: provider reports healthy and no incidents in the region; synthetic_case=9; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0053",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-10T14:09:00+00:00",
+        "content": "docs: clarify retry policy examples; synthetic_case=9; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0054",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-01-10T14:11:00+00:00",
+        "content": "metric_name=memory value=59 service=checkout-api; synthetic_case=9; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0049",
+      "EVID-0050",
+      "EVID-0051"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0052"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0053",
+      "EVID-0054"
+    ]
+  },
+  {
+    "case_id": "SYN-010",
+    "incident": {
+      "id": "INC-SYN-010",
+      "title": "External Api Failure investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-11T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "external_api_failure",
+    "ground_truth_terms": [
+      "external api failure",
+      "External Api Failure",
+      "external",
+      "api",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0055",
+        "type": "LOG",
+        "source": "upstream api 503",
+        "timestamp": "2025-01-11T14:02:00+00:00",
+        "content": "ERROR upstream api returned HTTP 503 from payment-provider; synthetic_case=10; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0056",
+        "type": "ISSUE",
+        "source": "provider outage",
+        "timestamp": "2025-01-11T14:04:00+00:00",
+        "content": "Issue: payment provider intermittent outage; requests timing out; synthetic_case=10; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0057",
+        "type": "METRIC",
+        "source": "external latency",
+        "timestamp": "2025-01-11T14:06:00+00:00",
+        "content": "metric_name=latency value=4.1 service=checkout-api; external call latency elevated; synthetic_case=10; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0058",
+        "type": "ISSUE",
+        "source": "provider healthy",
+        "timestamp": "2025-01-11T14:08:00+00:00",
+        "content": "Status update: provider reports healthy and no incidents in the region; synthetic_case=10; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0059",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-11T14:10:00+00:00",
+        "content": "docs: clarify retry policy examples; synthetic_case=10; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0060",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-01-11T14:12:00+00:00",
+        "content": "metric_name=memory value=59 service=checkout-api; synthetic_case=10; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0055",
+      "EVID-0056",
+      "EVID-0057"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0058"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0059",
+      "EVID-0060"
+    ]
+  },
+  {
+    "case_id": "SYN-011",
+    "incident": {
+      "id": "INC-SYN-011",
+      "title": "External Api Failure investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-12T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "external_api_failure",
+    "ground_truth_terms": [
+      "external api failure",
+      "External Api Failure",
+      "external",
+      "api",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0061",
+        "type": "LOG",
+        "source": "upstream api 503",
+        "timestamp": "2025-01-12T14:03:00+00:00",
+        "content": "ERROR upstream api returned HTTP 503 from payment-provider; synthetic_case=11; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0062",
+        "type": "ISSUE",
+        "source": "provider outage",
+        "timestamp": "2025-01-12T14:05:00+00:00",
+        "content": "Issue: payment provider intermittent outage; requests timing out; synthetic_case=11; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0063",
+        "type": "METRIC",
+        "source": "external latency",
+        "timestamp": "2025-01-12T14:07:00+00:00",
+        "content": "metric_name=latency value=4.1 service=checkout-api; external call latency elevated; synthetic_case=11; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0064",
+        "type": "ISSUE",
+        "source": "provider healthy",
+        "timestamp": "2025-01-12T14:09:00+00:00",
+        "content": "Status update: provider reports healthy and no incidents in the region; synthetic_case=11; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0065",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-12T14:11:00+00:00",
+        "content": "docs: clarify retry policy examples; synthetic_case=11; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0066",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-01-12T14:13:00+00:00",
+        "content": "metric_name=memory value=59 service=checkout-api; synthetic_case=11; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0061",
+      "EVID-0062",
+      "EVID-0063"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0064"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0065",
+      "EVID-0066"
+    ]
+  },
+  {
+    "case_id": "SYN-012",
+    "incident": {
+      "id": "INC-SYN-012",
+      "title": "External Api Failure investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-13T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "external_api_failure",
+    "ground_truth_terms": [
+      "external api failure",
+      "External Api Failure",
+      "external",
+      "api",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0067",
+        "type": "LOG",
+        "source": "upstream api 503",
+        "timestamp": "2025-01-13T14:04:00+00:00",
+        "content": "ERROR upstream api returned HTTP 503 from payment-provider; synthetic_case=12; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0068",
+        "type": "ISSUE",
+        "source": "provider outage",
+        "timestamp": "2025-01-13T14:06:00+00:00",
+        "content": "Issue: payment provider intermittent outage; requests timing out; synthetic_case=12; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0069",
+        "type": "METRIC",
+        "source": "external latency",
+        "timestamp": "2025-01-13T14:08:00+00:00",
+        "content": "metric_name=latency value=4.1 service=checkout-api; external call latency elevated; synthetic_case=12; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0070",
+        "type": "ISSUE",
+        "source": "provider healthy",
+        "timestamp": "2025-01-13T14:10:00+00:00",
+        "content": "Status update: provider reports healthy and no incidents in the region; synthetic_case=12; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0071",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-13T14:12:00+00:00",
+        "content": "docs: clarify retry policy examples; synthetic_case=12; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0072",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-01-13T14:14:00+00:00",
+        "content": "metric_name=memory value=59 service=checkout-api; synthetic_case=12; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0067",
+      "EVID-0068",
+      "EVID-0069"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0070"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0071",
+      "EVID-0072"
+    ]
+  },
+  {
+    "case_id": "SYN-013",
+    "incident": {
+      "id": "INC-SYN-013",
+      "title": "Connection Exhaustion investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-14T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "connection_exhaustion",
+    "ground_truth_terms": [
+      "connection exhaustion",
+      "Connection Exhaustion",
+      "connection",
+      "exhaustion"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0073",
+        "type": "LOG",
+        "source": "pool timeout",
+        "timestamp": "2025-01-14T14:01:00+00:00",
+        "content": "ERROR database connection pool timeout; too many connections active; synthetic_case=13; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0074",
+        "type": "METRIC",
+        "source": "db connections",
+        "timestamp": "2025-01-14T14:03:00+00:00",
+        "content": "metric_name=db_connections value=148 service=orders-api; above configured pool limit; synthetic_case=13; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0075",
+        "type": "LOG",
+        "source": "connections exhausted",
+        "timestamp": "2025-01-14T14:05:00+00:00",
+        "content": "ERROR connections exhausted while opening transaction for /orders; synthetic_case=13; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0076",
+        "type": "METRIC",
+        "source": "connections healthy",
+        "timestamp": "2025-01-14T14:07:00+00:00",
+        "content": "metric_name=db_connections value=12 service=orders-api; connections are healthy and within pool limit; synthetic_case=13; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0077",
+        "type": "DEPLOYMENT",
+        "source": "assets",
+        "timestamp": "2025-01-14T14:09:00+00:00",
+        "content": "deployment static asset bundle for docs site succeeded; synthetic_case=13; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0078",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-14T14:11:00+00:00",
+        "content": "Issue: product image alt text missing; synthetic_case=13; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0073",
+      "EVID-0074",
+      "EVID-0075"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0076"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0077",
+      "EVID-0078"
+    ]
+  },
+  {
+    "case_id": "SYN-014",
+    "incident": {
+      "id": "INC-SYN-014",
+      "title": "Connection Exhaustion investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-15T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "connection_exhaustion",
+    "ground_truth_terms": [
+      "connection exhaustion",
+      "Connection Exhaustion",
+      "connection",
+      "exhaustion"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0079",
+        "type": "LOG",
+        "source": "pool timeout",
+        "timestamp": "2025-01-15T14:02:00+00:00",
+        "content": "ERROR database connection pool timeout; too many connections active; synthetic_case=14; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0080",
+        "type": "METRIC",
+        "source": "db connections",
+        "timestamp": "2025-01-15T14:04:00+00:00",
+        "content": "metric_name=db_connections value=148 service=orders-api; above configured pool limit; synthetic_case=14; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0081",
+        "type": "LOG",
+        "source": "connections exhausted",
+        "timestamp": "2025-01-15T14:06:00+00:00",
+        "content": "ERROR connections exhausted while opening transaction for /orders; synthetic_case=14; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0082",
+        "type": "METRIC",
+        "source": "connections healthy",
+        "timestamp": "2025-01-15T14:08:00+00:00",
+        "content": "metric_name=db_connections value=12 service=orders-api; connections are healthy and within pool limit; synthetic_case=14; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0083",
+        "type": "DEPLOYMENT",
+        "source": "assets",
+        "timestamp": "2025-01-15T14:10:00+00:00",
+        "content": "deployment static asset bundle for docs site succeeded; synthetic_case=14; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0084",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-15T14:12:00+00:00",
+        "content": "Issue: product image alt text missing; synthetic_case=14; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0079",
+      "EVID-0080",
+      "EVID-0081"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0082"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0083",
+      "EVID-0084"
+    ]
+  },
+  {
+    "case_id": "SYN-015",
+    "incident": {
+      "id": "INC-SYN-015",
+      "title": "Connection Exhaustion investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-16T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "connection_exhaustion",
+    "ground_truth_terms": [
+      "connection exhaustion",
+      "Connection Exhaustion",
+      "connection",
+      "exhaustion"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0085",
+        "type": "LOG",
+        "source": "pool timeout",
+        "timestamp": "2025-01-16T14:03:00+00:00",
+        "content": "ERROR database connection pool timeout; too many connections active; synthetic_case=15; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0086",
+        "type": "METRIC",
+        "source": "db connections",
+        "timestamp": "2025-01-16T14:05:00+00:00",
+        "content": "metric_name=db_connections value=148 service=orders-api; above configured pool limit; synthetic_case=15; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0087",
+        "type": "LOG",
+        "source": "connections exhausted",
+        "timestamp": "2025-01-16T14:07:00+00:00",
+        "content": "ERROR connections exhausted while opening transaction for /orders; synthetic_case=15; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0088",
+        "type": "METRIC",
+        "source": "connections healthy",
+        "timestamp": "2025-01-16T14:09:00+00:00",
+        "content": "metric_name=db_connections value=12 service=orders-api; connections are healthy and within pool limit; synthetic_case=15; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0089",
+        "type": "DEPLOYMENT",
+        "source": "assets",
+        "timestamp": "2025-01-16T14:11:00+00:00",
+        "content": "deployment static asset bundle for docs site succeeded; synthetic_case=15; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0090",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-16T14:13:00+00:00",
+        "content": "Issue: product image alt text missing; synthetic_case=15; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0085",
+      "EVID-0086",
+      "EVID-0087"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0088"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0089",
+      "EVID-0090"
+    ]
+  },
+  {
+    "case_id": "SYN-016",
+    "incident": {
+      "id": "INC-SYN-016",
+      "title": "Connection Exhaustion investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-17T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "connection_exhaustion",
+    "ground_truth_terms": [
+      "connection exhaustion",
+      "Connection Exhaustion",
+      "connection",
+      "exhaustion"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0091",
+        "type": "LOG",
+        "source": "pool timeout",
+        "timestamp": "2025-01-17T14:04:00+00:00",
+        "content": "ERROR database connection pool timeout; too many connections active; synthetic_case=16; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0092",
+        "type": "METRIC",
+        "source": "db connections",
+        "timestamp": "2025-01-17T14:06:00+00:00",
+        "content": "metric_name=db_connections value=148 service=orders-api; above configured pool limit; synthetic_case=16; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0093",
+        "type": "LOG",
+        "source": "connections exhausted",
+        "timestamp": "2025-01-17T14:08:00+00:00",
+        "content": "ERROR connections exhausted while opening transaction for /orders; synthetic_case=16; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0094",
+        "type": "METRIC",
+        "source": "connections healthy",
+        "timestamp": "2025-01-17T14:10:00+00:00",
+        "content": "metric_name=db_connections value=12 service=orders-api; connections are healthy and within pool limit; synthetic_case=16; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0095",
+        "type": "DEPLOYMENT",
+        "source": "assets",
+        "timestamp": "2025-01-17T14:12:00+00:00",
+        "content": "deployment static asset bundle for docs site succeeded; synthetic_case=16; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0096",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-17T14:14:00+00:00",
+        "content": "Issue: product image alt text missing; synthetic_case=16; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0091",
+      "EVID-0092",
+      "EVID-0093"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0094"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0095",
+      "EVID-0096"
+    ]
+  },
+  {
+    "case_id": "SYN-017",
+    "incident": {
+      "id": "INC-SYN-017",
+      "title": "Feature Flag Error investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-18T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "feature_flag_error",
+    "ground_truth_terms": [
+      "feature flag error",
+      "Feature Flag Error",
+      "feature",
+      "flag",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0097",
+        "type": "ISSUE",
+        "source": "feature flag enabled",
+        "timestamp": "2025-01-18T14:01:00+00:00",
+        "content": "Issue: new pricing feature flag enabled for all checkout users unexpectedly; synthetic_case=17; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0098",
+        "type": "LOG",
+        "source": "flag selected",
+        "timestamp": "2025-01-18T14:03:00+00:00",
+        "content": "ERROR feature flag checkout_v2 selected unsupported path for tenant; synthetic_case=17; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0099",
+        "type": "DEPLOYMENT",
+        "source": "rollout enabled",
+        "timestamp": "2025-01-18T14:05:00+00:00",
+        "content": "deployment rollout=100% enabled checkout_v2 toggle; synthetic_case=17; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0100",
+        "type": "LOG",
+        "source": "flag disabled",
+        "timestamp": "2025-01-18T14:07:00+00:00",
+        "content": "INFO feature flag checkout_v2 was disabled for all affected tenants; synthetic_case=17; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0101",
+        "type": "METRIC",
+        "source": "cpu 24",
+        "timestamp": "2025-01-18T14:09:00+00:00",
+        "content": "metric_name=cpu value=24 service=checkout-api; synthetic_case=17; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0102",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-18T14:11:00+00:00",
+        "content": "docs: update flag naming examples; synthetic_case=17; variant=1",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0097",
+      "EVID-0098",
+      "EVID-0099"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0100"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0101",
+      "EVID-0102"
+    ]
+  },
+  {
+    "case_id": "SYN-018",
+    "incident": {
+      "id": "INC-SYN-018",
+      "title": "Feature Flag Error investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-19T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "feature_flag_error",
+    "ground_truth_terms": [
+      "feature flag error",
+      "Feature Flag Error",
+      "feature",
+      "flag",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0103",
+        "type": "ISSUE",
+        "source": "feature flag enabled",
+        "timestamp": "2025-01-19T14:02:00+00:00",
+        "content": "Issue: new pricing feature flag enabled for all checkout users unexpectedly; synthetic_case=18; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0104",
+        "type": "LOG",
+        "source": "flag selected",
+        "timestamp": "2025-01-19T14:04:00+00:00",
+        "content": "ERROR feature flag checkout_v2 selected unsupported path for tenant; synthetic_case=18; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0105",
+        "type": "DEPLOYMENT",
+        "source": "rollout enabled",
+        "timestamp": "2025-01-19T14:06:00+00:00",
+        "content": "deployment rollout=100% enabled checkout_v2 toggle; synthetic_case=18; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0106",
+        "type": "LOG",
+        "source": "flag disabled",
+        "timestamp": "2025-01-19T14:08:00+00:00",
+        "content": "INFO feature flag checkout_v2 was disabled for all affected tenants; synthetic_case=18; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0107",
+        "type": "METRIC",
+        "source": "cpu 24",
+        "timestamp": "2025-01-19T14:10:00+00:00",
+        "content": "metric_name=cpu value=24 service=checkout-api; synthetic_case=18; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0108",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-19T14:12:00+00:00",
+        "content": "docs: update flag naming examples; synthetic_case=18; variant=2",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0103",
+      "EVID-0104",
+      "EVID-0105"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0106"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0107",
+      "EVID-0108"
+    ]
+  },
+  {
+    "case_id": "SYN-019",
+    "incident": {
+      "id": "INC-SYN-019",
+      "title": "Feature Flag Error investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-20T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "feature_flag_error",
+    "ground_truth_terms": [
+      "feature flag error",
+      "Feature Flag Error",
+      "feature",
+      "flag",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0109",
+        "type": "ISSUE",
+        "source": "feature flag enabled",
+        "timestamp": "2025-01-20T14:03:00+00:00",
+        "content": "Issue: new pricing feature flag enabled for all checkout users unexpectedly; synthetic_case=19; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0110",
+        "type": "LOG",
+        "source": "flag selected",
+        "timestamp": "2025-01-20T14:05:00+00:00",
+        "content": "ERROR feature flag checkout_v2 selected unsupported path for tenant; synthetic_case=19; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0111",
+        "type": "DEPLOYMENT",
+        "source": "rollout enabled",
+        "timestamp": "2025-01-20T14:07:00+00:00",
+        "content": "deployment rollout=100% enabled checkout_v2 toggle; synthetic_case=19; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0112",
+        "type": "LOG",
+        "source": "flag disabled",
+        "timestamp": "2025-01-20T14:09:00+00:00",
+        "content": "INFO feature flag checkout_v2 was disabled for all affected tenants; synthetic_case=19; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0113",
+        "type": "METRIC",
+        "source": "cpu 24",
+        "timestamp": "2025-01-20T14:11:00+00:00",
+        "content": "metric_name=cpu value=24 service=checkout-api; synthetic_case=19; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0114",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-20T14:13:00+00:00",
+        "content": "docs: update flag naming examples; synthetic_case=19; variant=3",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0109",
+      "EVID-0110",
+      "EVID-0111"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0112"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0113",
+      "EVID-0114"
+    ]
+  },
+  {
+    "case_id": "SYN-020",
+    "incident": {
+      "id": "INC-SYN-020",
+      "title": "Feature Flag Error investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "checkout-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-21T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "feature_flag_error",
+    "ground_truth_terms": [
+      "feature flag error",
+      "Feature Flag Error",
+      "feature",
+      "flag",
+      "error"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0115",
+        "type": "ISSUE",
+        "source": "feature flag enabled",
+        "timestamp": "2025-01-21T14:04:00+00:00",
+        "content": "Issue: new pricing feature flag enabled for all checkout users unexpectedly; synthetic_case=20; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0116",
+        "type": "LOG",
+        "source": "flag selected",
+        "timestamp": "2025-01-21T14:06:00+00:00",
+        "content": "ERROR feature flag checkout_v2 selected unsupported path for tenant; synthetic_case=20; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0117",
+        "type": "DEPLOYMENT",
+        "source": "rollout enabled",
+        "timestamp": "2025-01-21T14:08:00+00:00",
+        "content": "deployment rollout=100% enabled checkout_v2 toggle; synthetic_case=20; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0118",
+        "type": "LOG",
+        "source": "flag disabled",
+        "timestamp": "2025-01-21T14:10:00+00:00",
+        "content": "INFO feature flag checkout_v2 was disabled for all affected tenants; synthetic_case=20; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0119",
+        "type": "METRIC",
+        "source": "cpu 24",
+        "timestamp": "2025-01-21T14:12:00+00:00",
+        "content": "metric_name=cpu value=24 service=checkout-api; synthetic_case=20; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0120",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-21T14:14:00+00:00",
+        "content": "docs: update flag naming examples; synthetic_case=20; variant=4",
+        "metadata": {
+          "service": "checkout-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0115",
+      "EVID-0116",
+      "EVID-0117"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0118"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0119",
+      "EVID-0120"
+    ]
+  },
+  {
+    "case_id": "SYN-021",
+    "incident": {
+      "id": "INC-SYN-021",
+      "title": "Memory Leak investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "profile-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-22T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "memory_leak",
+    "ground_truth_terms": [
+      "memory leak",
+      "Memory Leak",
+      "memory",
+      "leak"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0121",
+        "type": "METRIC",
+        "source": "memory usage",
+        "timestamp": "2025-01-22T14:01:00+00:00",
+        "content": "metric_name=memory value=93 service=profile-api; RSS grows continuously; synthetic_case=21; variant=1",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0122",
+        "type": "LOG",
+        "source": "out of memory",
+        "timestamp": "2025-01-22T14:03:00+00:00",
+        "content": "ERROR process restarted after out of memory kill; heap retention observed; synthetic_case=21; variant=1",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0123",
+        "type": "COMMIT",
+        "source": "memory cache",
+        "timestamp": "2025-01-22T14:05:00+00:00",
+        "content": "feat: add long-lived in-memory response cache without eviction; synthetic_case=21; variant=1",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0124",
+        "type": "METRIC",
+        "source": "memory stable",
+        "timestamp": "2025-01-22T14:07:00+00:00",
+        "content": "metric_name=memory value=42 service=profile-api; memory is healthy and stable; synthetic_case=21; variant=1",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0125",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-22T14:09:00+00:00",
+        "content": "Issue: improve spacing on profile settings screen; synthetic_case=21; variant=1",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0126",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-22T14:11:00+00:00",
+        "content": "metric_name=latency value=0.2 service=profile-api; synthetic_case=21; variant=1",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0121",
+      "EVID-0122",
+      "EVID-0123"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0124"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0125",
+      "EVID-0126"
+    ]
+  },
+  {
+    "case_id": "SYN-022",
+    "incident": {
+      "id": "INC-SYN-022",
+      "title": "Memory Leak investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "profile-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-23T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "memory_leak",
+    "ground_truth_terms": [
+      "memory leak",
+      "Memory Leak",
+      "memory",
+      "leak"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0127",
+        "type": "METRIC",
+        "source": "memory usage",
+        "timestamp": "2025-01-23T14:02:00+00:00",
+        "content": "metric_name=memory value=93 service=profile-api; RSS grows continuously; synthetic_case=22; variant=2",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0128",
+        "type": "LOG",
+        "source": "out of memory",
+        "timestamp": "2025-01-23T14:04:00+00:00",
+        "content": "ERROR process restarted after out of memory kill; heap retention observed; synthetic_case=22; variant=2",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0129",
+        "type": "COMMIT",
+        "source": "memory cache",
+        "timestamp": "2025-01-23T14:06:00+00:00",
+        "content": "feat: add long-lived in-memory response cache without eviction; synthetic_case=22; variant=2",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0130",
+        "type": "METRIC",
+        "source": "memory stable",
+        "timestamp": "2025-01-23T14:08:00+00:00",
+        "content": "metric_name=memory value=42 service=profile-api; memory is healthy and stable; synthetic_case=22; variant=2",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0131",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-23T14:10:00+00:00",
+        "content": "Issue: improve spacing on profile settings screen; synthetic_case=22; variant=2",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0132",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-23T14:12:00+00:00",
+        "content": "metric_name=latency value=0.2 service=profile-api; synthetic_case=22; variant=2",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0127",
+      "EVID-0128",
+      "EVID-0129"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0130"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0131",
+      "EVID-0132"
+    ]
+  },
+  {
+    "case_id": "SYN-023",
+    "incident": {
+      "id": "INC-SYN-023",
+      "title": "Memory Leak investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "profile-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-24T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "memory_leak",
+    "ground_truth_terms": [
+      "memory leak",
+      "Memory Leak",
+      "memory",
+      "leak"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0133",
+        "type": "METRIC",
+        "source": "memory usage",
+        "timestamp": "2025-01-24T14:03:00+00:00",
+        "content": "metric_name=memory value=93 service=profile-api; RSS grows continuously; synthetic_case=23; variant=3",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0134",
+        "type": "LOG",
+        "source": "out of memory",
+        "timestamp": "2025-01-24T14:05:00+00:00",
+        "content": "ERROR process restarted after out of memory kill; heap retention observed; synthetic_case=23; variant=3",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0135",
+        "type": "COMMIT",
+        "source": "memory cache",
+        "timestamp": "2025-01-24T14:07:00+00:00",
+        "content": "feat: add long-lived in-memory response cache without eviction; synthetic_case=23; variant=3",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0136",
+        "type": "METRIC",
+        "source": "memory stable",
+        "timestamp": "2025-01-24T14:09:00+00:00",
+        "content": "metric_name=memory value=42 service=profile-api; memory is healthy and stable; synthetic_case=23; variant=3",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0137",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-24T14:11:00+00:00",
+        "content": "Issue: improve spacing on profile settings screen; synthetic_case=23; variant=3",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0138",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-24T14:13:00+00:00",
+        "content": "metric_name=latency value=0.2 service=profile-api; synthetic_case=23; variant=3",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0133",
+      "EVID-0134",
+      "EVID-0135"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0136"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0137",
+      "EVID-0138"
+    ]
+  },
+  {
+    "case_id": "SYN-024",
+    "incident": {
+      "id": "INC-SYN-024",
+      "title": "Memory Leak investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "profile-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-25T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "memory_leak",
+    "ground_truth_terms": [
+      "memory leak",
+      "Memory Leak",
+      "memory",
+      "leak"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0139",
+        "type": "METRIC",
+        "source": "memory usage",
+        "timestamp": "2025-01-25T14:04:00+00:00",
+        "content": "metric_name=memory value=93 service=profile-api; RSS grows continuously; synthetic_case=24; variant=4",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0140",
+        "type": "LOG",
+        "source": "out of memory",
+        "timestamp": "2025-01-25T14:06:00+00:00",
+        "content": "ERROR process restarted after out of memory kill; heap retention observed; synthetic_case=24; variant=4",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0141",
+        "type": "COMMIT",
+        "source": "memory cache",
+        "timestamp": "2025-01-25T14:08:00+00:00",
+        "content": "feat: add long-lived in-memory response cache without eviction; synthetic_case=24; variant=4",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0142",
+        "type": "METRIC",
+        "source": "memory stable",
+        "timestamp": "2025-01-25T14:10:00+00:00",
+        "content": "metric_name=memory value=42 service=profile-api; memory is healthy and stable; synthetic_case=24; variant=4",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0143",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-25T14:12:00+00:00",
+        "content": "Issue: improve spacing on profile settings screen; synthetic_case=24; variant=4",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0144",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-01-25T14:14:00+00:00",
+        "content": "metric_name=latency value=0.2 service=profile-api; synthetic_case=24; variant=4",
+        "metadata": {
+          "service": "profile-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0139",
+      "EVID-0140",
+      "EVID-0141"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0142"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0143",
+      "EVID-0144"
+    ]
+  },
+  {
+    "case_id": "SYN-025",
+    "incident": {
+      "id": "INC-SYN-025",
+      "title": "Incorrect Deployment investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "inventory-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-26T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "incorrect_deployment",
+    "ground_truth_terms": [
+      "incorrect deployment",
+      "Incorrect Deployment",
+      "incorrect",
+      "deployment"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0145",
+        "type": "DEPLOYMENT",
+        "source": "deployment release",
+        "timestamp": "2025-01-26T14:01:00+00:00",
+        "content": "deployment version=v7.0 status=complete service=inventory-api; release began at incident time; synthetic_case=25; variant=1",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0146",
+        "type": "LOG",
+        "source": "version module",
+        "timestamp": "2025-01-26T14:03:00+00:00",
+        "content": "ERROR unsupported module version loaded after deployment; synthetic_case=25; variant=1",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0147",
+        "type": "COMMIT",
+        "source": "dependency version",
+        "timestamp": "2025-01-26T14:05:00+00:00",
+        "content": "fix: dependency manifest now pins a breaking major release; synthetic_case=25; variant=1",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0148",
+        "type": "DEPLOYMENT",
+        "source": "previous healthy",
+        "timestamp": "2025-01-26T14:07:00+00:00",
+        "content": "previous deployment version=v6.9 healthy; current release artifact checksum matches; synthetic_case=25; variant=1",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0149",
+        "type": "METRIC",
+        "source": "cpu 31",
+        "timestamp": "2025-01-26T14:09:00+00:00",
+        "content": "metric_name=cpu value=31 service=inventory-api; synthetic_case=25; variant=1",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0150",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-26T14:11:00+00:00",
+        "content": "Issue: update inventory dashboard label; synthetic_case=25; variant=1",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0145",
+      "EVID-0146",
+      "EVID-0147"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0148"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0149",
+      "EVID-0150"
+    ]
+  },
+  {
+    "case_id": "SYN-026",
+    "incident": {
+      "id": "INC-SYN-026",
+      "title": "Incorrect Deployment investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "inventory-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-27T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "incorrect_deployment",
+    "ground_truth_terms": [
+      "incorrect deployment",
+      "Incorrect Deployment",
+      "incorrect",
+      "deployment"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0151",
+        "type": "DEPLOYMENT",
+        "source": "deployment release",
+        "timestamp": "2025-01-27T14:02:00+00:00",
+        "content": "deployment version=v7.0 status=complete service=inventory-api; release began at incident time; synthetic_case=26; variant=2",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0152",
+        "type": "LOG",
+        "source": "version module",
+        "timestamp": "2025-01-27T14:04:00+00:00",
+        "content": "ERROR unsupported module version loaded after deployment; synthetic_case=26; variant=2",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0153",
+        "type": "COMMIT",
+        "source": "dependency version",
+        "timestamp": "2025-01-27T14:06:00+00:00",
+        "content": "fix: dependency manifest now pins a breaking major release; synthetic_case=26; variant=2",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0154",
+        "type": "DEPLOYMENT",
+        "source": "previous healthy",
+        "timestamp": "2025-01-27T14:08:00+00:00",
+        "content": "previous deployment version=v6.9 healthy; current release artifact checksum matches; synthetic_case=26; variant=2",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0155",
+        "type": "METRIC",
+        "source": "cpu 31",
+        "timestamp": "2025-01-27T14:10:00+00:00",
+        "content": "metric_name=cpu value=31 service=inventory-api; synthetic_case=26; variant=2",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0156",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-27T14:12:00+00:00",
+        "content": "Issue: update inventory dashboard label; synthetic_case=26; variant=2",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0151",
+      "EVID-0152",
+      "EVID-0153"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0154"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0155",
+      "EVID-0156"
+    ]
+  },
+  {
+    "case_id": "SYN-027",
+    "incident": {
+      "id": "INC-SYN-027",
+      "title": "Incorrect Deployment investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "inventory-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-28T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "incorrect_deployment",
+    "ground_truth_terms": [
+      "incorrect deployment",
+      "Incorrect Deployment",
+      "incorrect",
+      "deployment"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0157",
+        "type": "DEPLOYMENT",
+        "source": "deployment release",
+        "timestamp": "2025-01-28T14:03:00+00:00",
+        "content": "deployment version=v7.0 status=complete service=inventory-api; release began at incident time; synthetic_case=27; variant=3",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0158",
+        "type": "LOG",
+        "source": "version module",
+        "timestamp": "2025-01-28T14:05:00+00:00",
+        "content": "ERROR unsupported module version loaded after deployment; synthetic_case=27; variant=3",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0159",
+        "type": "COMMIT",
+        "source": "dependency version",
+        "timestamp": "2025-01-28T14:07:00+00:00",
+        "content": "fix: dependency manifest now pins a breaking major release; synthetic_case=27; variant=3",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0160",
+        "type": "DEPLOYMENT",
+        "source": "previous healthy",
+        "timestamp": "2025-01-28T14:09:00+00:00",
+        "content": "previous deployment version=v6.9 healthy; current release artifact checksum matches; synthetic_case=27; variant=3",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0161",
+        "type": "METRIC",
+        "source": "cpu 31",
+        "timestamp": "2025-01-28T14:11:00+00:00",
+        "content": "metric_name=cpu value=31 service=inventory-api; synthetic_case=27; variant=3",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0162",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-28T14:13:00+00:00",
+        "content": "Issue: update inventory dashboard label; synthetic_case=27; variant=3",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0157",
+      "EVID-0158",
+      "EVID-0159"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0160"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0161",
+      "EVID-0162"
+    ]
+  },
+  {
+    "case_id": "SYN-028",
+    "incident": {
+      "id": "INC-SYN-028",
+      "title": "Incorrect Deployment investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "inventory-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-29T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "incorrect_deployment",
+    "ground_truth_terms": [
+      "incorrect deployment",
+      "Incorrect Deployment",
+      "incorrect",
+      "deployment"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0163",
+        "type": "DEPLOYMENT",
+        "source": "deployment release",
+        "timestamp": "2025-01-29T14:04:00+00:00",
+        "content": "deployment version=v7.0 status=complete service=inventory-api; release began at incident time; synthetic_case=28; variant=4",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0164",
+        "type": "LOG",
+        "source": "version module",
+        "timestamp": "2025-01-29T14:06:00+00:00",
+        "content": "ERROR unsupported module version loaded after deployment; synthetic_case=28; variant=4",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0165",
+        "type": "COMMIT",
+        "source": "dependency version",
+        "timestamp": "2025-01-29T14:08:00+00:00",
+        "content": "fix: dependency manifest now pins a breaking major release; synthetic_case=28; variant=4",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0166",
+        "type": "DEPLOYMENT",
+        "source": "previous healthy",
+        "timestamp": "2025-01-29T14:10:00+00:00",
+        "content": "previous deployment version=v6.9 healthy; current release artifact checksum matches; synthetic_case=28; variant=4",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0167",
+        "type": "METRIC",
+        "source": "cpu 31",
+        "timestamp": "2025-01-29T14:12:00+00:00",
+        "content": "metric_name=cpu value=31 service=inventory-api; synthetic_case=28; variant=4",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0168",
+        "type": "ISSUE",
+        "source": "unrelated issue",
+        "timestamp": "2025-01-29T14:14:00+00:00",
+        "content": "Issue: update inventory dashboard label; synthetic_case=28; variant=4",
+        "metadata": {
+          "service": "inventory-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0163",
+      "EVID-0164",
+      "EVID-0165"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0166"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0167",
+      "EVID-0168"
+    ]
+  },
+  {
+    "case_id": "SYN-029",
+    "incident": {
+      "id": "INC-SYN-029",
+      "title": "Authentication Failure investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "identity-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-30T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "authentication_failure",
+    "ground_truth_terms": [
+      "authentication failure",
+      "Authentication Failure",
+      "authentication",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0169",
+        "type": "LOG",
+        "source": "token expired",
+        "timestamp": "2025-01-30T14:01:00+00:00",
+        "content": "ERROR authentication failed: token expired for requests to /account; synthetic_case=29; variant=1",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0170",
+        "type": "ISSUE",
+        "source": "oauth key",
+        "timestamp": "2025-01-30T14:03:00+00:00",
+        "content": "Issue: OAuth signing key rotation caused 401 responses; synthetic_case=29; variant=1",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0171",
+        "type": "METRIC",
+        "source": "401 403",
+        "timestamp": "2025-01-30T14:05:00+00:00",
+        "content": "metric_name=error_rate value=0.42 service=identity-api; 401 and 403 errors increased; synthetic_case=29; variant=1",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0172",
+        "type": "LOG",
+        "source": "auth succeeded",
+        "timestamp": "2025-01-30T14:07:00+00:00",
+        "content": "INFO authentication succeeded for all sampled requests; no auth errors; synthetic_case=29; variant=1",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0173",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-30T14:09:00+00:00",
+        "content": "docs: clarify login page instructions; synthetic_case=29; variant=1",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0174",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-01-30T14:11:00+00:00",
+        "content": "metric_name=memory value=44 service=identity-api; synthetic_case=29; variant=1",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0169",
+      "EVID-0170",
+      "EVID-0171"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0172"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0173",
+      "EVID-0174"
+    ]
+  },
+  {
+    "case_id": "SYN-030",
+    "incident": {
+      "id": "INC-SYN-030",
+      "title": "Authentication Failure investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "identity-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-01-31T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "authentication_failure",
+    "ground_truth_terms": [
+      "authentication failure",
+      "Authentication Failure",
+      "authentication",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0175",
+        "type": "LOG",
+        "source": "token expired",
+        "timestamp": "2025-01-31T14:02:00+00:00",
+        "content": "ERROR authentication failed: token expired for requests to /account; synthetic_case=30; variant=2",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0176",
+        "type": "ISSUE",
+        "source": "oauth key",
+        "timestamp": "2025-01-31T14:04:00+00:00",
+        "content": "Issue: OAuth signing key rotation caused 401 responses; synthetic_case=30; variant=2",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0177",
+        "type": "METRIC",
+        "source": "401 403",
+        "timestamp": "2025-01-31T14:06:00+00:00",
+        "content": "metric_name=error_rate value=0.42 service=identity-api; 401 and 403 errors increased; synthetic_case=30; variant=2",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0178",
+        "type": "LOG",
+        "source": "auth succeeded",
+        "timestamp": "2025-01-31T14:08:00+00:00",
+        "content": "INFO authentication succeeded for all sampled requests; no auth errors; synthetic_case=30; variant=2",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0179",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-01-31T14:10:00+00:00",
+        "content": "docs: clarify login page instructions; synthetic_case=30; variant=2",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0180",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-01-31T14:12:00+00:00",
+        "content": "metric_name=memory value=44 service=identity-api; synthetic_case=30; variant=2",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0175",
+      "EVID-0176",
+      "EVID-0177"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0178"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0179",
+      "EVID-0180"
+    ]
+  },
+  {
+    "case_id": "SYN-031",
+    "incident": {
+      "id": "INC-SYN-031",
+      "title": "Authentication Failure investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "identity-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-01T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "authentication_failure",
+    "ground_truth_terms": [
+      "authentication failure",
+      "Authentication Failure",
+      "authentication",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0181",
+        "type": "LOG",
+        "source": "token expired",
+        "timestamp": "2025-02-01T14:03:00+00:00",
+        "content": "ERROR authentication failed: token expired for requests to /account; synthetic_case=31; variant=3",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0182",
+        "type": "ISSUE",
+        "source": "oauth key",
+        "timestamp": "2025-02-01T14:05:00+00:00",
+        "content": "Issue: OAuth signing key rotation caused 401 responses; synthetic_case=31; variant=3",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0183",
+        "type": "METRIC",
+        "source": "401 403",
+        "timestamp": "2025-02-01T14:07:00+00:00",
+        "content": "metric_name=error_rate value=0.42 service=identity-api; 401 and 403 errors increased; synthetic_case=31; variant=3",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0184",
+        "type": "LOG",
+        "source": "auth succeeded",
+        "timestamp": "2025-02-01T14:09:00+00:00",
+        "content": "INFO authentication succeeded for all sampled requests; no auth errors; synthetic_case=31; variant=3",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0185",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-02-01T14:11:00+00:00",
+        "content": "docs: clarify login page instructions; synthetic_case=31; variant=3",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0186",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-02-01T14:13:00+00:00",
+        "content": "metric_name=memory value=44 service=identity-api; synthetic_case=31; variant=3",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0181",
+      "EVID-0182",
+      "EVID-0183"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0184"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0185",
+      "EVID-0186"
+    ]
+  },
+  {
+    "case_id": "SYN-032",
+    "incident": {
+      "id": "INC-SYN-032",
+      "title": "Authentication Failure investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "identity-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-02T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "authentication_failure",
+    "ground_truth_terms": [
+      "authentication failure",
+      "Authentication Failure",
+      "authentication",
+      "failure"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0187",
+        "type": "LOG",
+        "source": "token expired",
+        "timestamp": "2025-02-02T14:04:00+00:00",
+        "content": "ERROR authentication failed: token expired for requests to /account; synthetic_case=32; variant=4",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0188",
+        "type": "ISSUE",
+        "source": "oauth key",
+        "timestamp": "2025-02-02T14:06:00+00:00",
+        "content": "Issue: OAuth signing key rotation caused 401 responses; synthetic_case=32; variant=4",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0189",
+        "type": "METRIC",
+        "source": "401 403",
+        "timestamp": "2025-02-02T14:08:00+00:00",
+        "content": "metric_name=error_rate value=0.42 service=identity-api; 401 and 403 errors increased; synthetic_case=32; variant=4",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0190",
+        "type": "LOG",
+        "source": "auth succeeded",
+        "timestamp": "2025-02-02T14:10:00+00:00",
+        "content": "INFO authentication succeeded for all sampled requests; no auth errors; synthetic_case=32; variant=4",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0191",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-02-02T14:12:00+00:00",
+        "content": "docs: clarify login page instructions; synthetic_case=32; variant=4",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0192",
+        "type": "METRIC",
+        "source": "memory",
+        "timestamp": "2025-02-02T14:14:00+00:00",
+        "content": "metric_name=memory value=44 service=identity-api; synthetic_case=32; variant=4",
+        "metadata": {
+          "service": "identity-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0187",
+      "EVID-0188",
+      "EVID-0189"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0190"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0191",
+      "EVID-0192"
+    ]
+  },
+  {
+    "case_id": "SYN-033",
+    "incident": {
+      "id": "INC-SYN-033",
+      "title": "Network Timeout investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-03T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "network_timeout",
+    "ground_truth_terms": [
+      "network timeout",
+      "Network Timeout",
+      "network",
+      "timeout"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0193",
+        "type": "LOG",
+        "source": "network timeout",
+        "timestamp": "2025-02-03T14:01:00+00:00",
+        "content": "ERROR network timeout connecting to fulfillment-api; connection reset; synthetic_case=33; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0194",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-02-03T14:03:00+00:00",
+        "content": "metric_name=latency value=5.0 service=orders-api; service-to-service latency spike; synthetic_case=33; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0195",
+        "type": "ISSUE",
+        "source": "dns",
+        "timestamp": "2025-02-03T14:05:00+00:00",
+        "content": "Issue: DNS resolution intermittently fails between orders and fulfillment; synthetic_case=33; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0196",
+        "type": "METRIC",
+        "source": "latency normal",
+        "timestamp": "2025-02-03T14:07:00+00:00",
+        "content": "metric_name=latency value=0.1 service=orders-api; network latency is normal; synthetic_case=33; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0197",
+        "type": "DEPLOYMENT",
+        "source": "web content",
+        "timestamp": "2025-02-03T14:09:00+00:00",
+        "content": "deployment customer web content only; synthetic_case=33; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0198",
+        "type": "LOG",
+        "source": "cache hit",
+        "timestamp": "2025-02-03T14:11:00+00:00",
+        "content": "INFO cache hit for product image; synthetic_case=33; variant=1",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0193",
+      "EVID-0194",
+      "EVID-0195"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0196"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0197",
+      "EVID-0198"
+    ]
+  },
+  {
+    "case_id": "SYN-034",
+    "incident": {
+      "id": "INC-SYN-034",
+      "title": "Network Timeout investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-04T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "network_timeout",
+    "ground_truth_terms": [
+      "network timeout",
+      "Network Timeout",
+      "network",
+      "timeout"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0199",
+        "type": "LOG",
+        "source": "network timeout",
+        "timestamp": "2025-02-04T14:02:00+00:00",
+        "content": "ERROR network timeout connecting to fulfillment-api; connection reset; synthetic_case=34; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0200",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-02-04T14:04:00+00:00",
+        "content": "metric_name=latency value=5.0 service=orders-api; service-to-service latency spike; synthetic_case=34; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0201",
+        "type": "ISSUE",
+        "source": "dns",
+        "timestamp": "2025-02-04T14:06:00+00:00",
+        "content": "Issue: DNS resolution intermittently fails between orders and fulfillment; synthetic_case=34; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0202",
+        "type": "METRIC",
+        "source": "latency normal",
+        "timestamp": "2025-02-04T14:08:00+00:00",
+        "content": "metric_name=latency value=0.1 service=orders-api; network latency is normal; synthetic_case=34; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0203",
+        "type": "DEPLOYMENT",
+        "source": "web content",
+        "timestamp": "2025-02-04T14:10:00+00:00",
+        "content": "deployment customer web content only; synthetic_case=34; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0204",
+        "type": "LOG",
+        "source": "cache hit",
+        "timestamp": "2025-02-04T14:12:00+00:00",
+        "content": "INFO cache hit for product image; synthetic_case=34; variant=2",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0199",
+      "EVID-0200",
+      "EVID-0201"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0202"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0203",
+      "EVID-0204"
+    ]
+  },
+  {
+    "case_id": "SYN-035",
+    "incident": {
+      "id": "INC-SYN-035",
+      "title": "Network Timeout investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-05T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "network_timeout",
+    "ground_truth_terms": [
+      "network timeout",
+      "Network Timeout",
+      "network",
+      "timeout"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0205",
+        "type": "LOG",
+        "source": "network timeout",
+        "timestamp": "2025-02-05T14:03:00+00:00",
+        "content": "ERROR network timeout connecting to fulfillment-api; connection reset; synthetic_case=35; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0206",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-02-05T14:05:00+00:00",
+        "content": "metric_name=latency value=5.0 service=orders-api; service-to-service latency spike; synthetic_case=35; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0207",
+        "type": "ISSUE",
+        "source": "dns",
+        "timestamp": "2025-02-05T14:07:00+00:00",
+        "content": "Issue: DNS resolution intermittently fails between orders and fulfillment; synthetic_case=35; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0208",
+        "type": "METRIC",
+        "source": "latency normal",
+        "timestamp": "2025-02-05T14:09:00+00:00",
+        "content": "metric_name=latency value=0.1 service=orders-api; network latency is normal; synthetic_case=35; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0209",
+        "type": "DEPLOYMENT",
+        "source": "web content",
+        "timestamp": "2025-02-05T14:11:00+00:00",
+        "content": "deployment customer web content only; synthetic_case=35; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0210",
+        "type": "LOG",
+        "source": "cache hit",
+        "timestamp": "2025-02-05T14:13:00+00:00",
+        "content": "INFO cache hit for product image; synthetic_case=35; variant=3",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0205",
+      "EVID-0206",
+      "EVID-0207"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0208"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0209",
+      "EVID-0210"
+    ]
+  },
+  {
+    "case_id": "SYN-036",
+    "incident": {
+      "id": "INC-SYN-036",
+      "title": "Network Timeout investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "orders-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-06T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "network_timeout",
+    "ground_truth_terms": [
+      "network timeout",
+      "Network Timeout",
+      "network",
+      "timeout"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0211",
+        "type": "LOG",
+        "source": "network timeout",
+        "timestamp": "2025-02-06T14:04:00+00:00",
+        "content": "ERROR network timeout connecting to fulfillment-api; connection reset; synthetic_case=36; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0212",
+        "type": "METRIC",
+        "source": "latency",
+        "timestamp": "2025-02-06T14:06:00+00:00",
+        "content": "metric_name=latency value=5.0 service=orders-api; service-to-service latency spike; synthetic_case=36; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0213",
+        "type": "ISSUE",
+        "source": "dns",
+        "timestamp": "2025-02-06T14:08:00+00:00",
+        "content": "Issue: DNS resolution intermittently fails between orders and fulfillment; synthetic_case=36; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0214",
+        "type": "METRIC",
+        "source": "latency normal",
+        "timestamp": "2025-02-06T14:10:00+00:00",
+        "content": "metric_name=latency value=0.1 service=orders-api; network latency is normal; synthetic_case=36; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0215",
+        "type": "DEPLOYMENT",
+        "source": "web content",
+        "timestamp": "2025-02-06T14:12:00+00:00",
+        "content": "deployment customer web content only; synthetic_case=36; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0216",
+        "type": "LOG",
+        "source": "cache hit",
+        "timestamp": "2025-02-06T14:14:00+00:00",
+        "content": "INFO cache hit for product image; synthetic_case=36; variant=4",
+        "metadata": {
+          "service": "orders-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0211",
+      "EVID-0212",
+      "EVID-0213"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0214"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0215",
+      "EVID-0216"
+    ]
+  },
+  {
+    "case_id": "SYN-037",
+    "incident": {
+      "id": "INC-SYN-037",
+      "title": "Cache Invalidation Issue investigation case 1",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "catalog-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-07T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "cache_invalidation_issue",
+    "ground_truth_terms": [
+      "cache invalidation issue",
+      "Cache Invalidation Issue",
+      "cache",
+      "invalidation",
+      "issue"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0217",
+        "type": "LOG",
+        "source": "cache stale",
+        "timestamp": "2025-02-07T14:01:00+00:00",
+        "content": "ERROR stale cache value served after invalidation event for catalog item; synthetic_case=37; variant=1",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0218",
+        "type": "METRIC",
+        "source": "cache miss",
+        "timestamp": "2025-02-07T14:03:00+00:00",
+        "content": "metric_name=cache_miss_rate value=0.01 service=catalog-api; invalidation miss rate unexpectedly low; synthetic_case=37; variant=1",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0219",
+        "type": "ISSUE",
+        "source": "cache ttl",
+        "timestamp": "2025-02-07T14:05:00+00:00",
+        "content": "Issue: users see stale catalog data after update; cache TTL not refreshed; synthetic_case=37; variant=1",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0220",
+        "type": "LOG",
+        "source": "cache fresh",
+        "timestamp": "2025-02-07T14:07:00+00:00",
+        "content": "INFO cache invalidation completed and source data is fresh; no stale responses; synthetic_case=37; variant=1",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0221",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-02-07T14:09:00+00:00",
+        "content": "docs: update catalog API reference; synthetic_case=37; variant=1",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0222",
+        "type": "METRIC",
+        "source": "cpu",
+        "timestamp": "2025-02-07T14:11:00+00:00",
+        "content": "metric_name=cpu value=28 service=catalog-api; synthetic_case=37; variant=1",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0217",
+      "EVID-0218",
+      "EVID-0219"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0220"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0221",
+      "EVID-0222"
+    ]
+  },
+  {
+    "case_id": "SYN-038",
+    "incident": {
+      "id": "INC-SYN-038",
+      "title": "Cache Invalidation Issue investigation case 2",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "catalog-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-08T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "cache_invalidation_issue",
+    "ground_truth_terms": [
+      "cache invalidation issue",
+      "Cache Invalidation Issue",
+      "cache",
+      "invalidation",
+      "issue"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0223",
+        "type": "LOG",
+        "source": "cache stale",
+        "timestamp": "2025-02-08T14:02:00+00:00",
+        "content": "ERROR stale cache value served after invalidation event for catalog item; synthetic_case=38; variant=2",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0224",
+        "type": "METRIC",
+        "source": "cache miss",
+        "timestamp": "2025-02-08T14:04:00+00:00",
+        "content": "metric_name=cache_miss_rate value=0.01 service=catalog-api; invalidation miss rate unexpectedly low; synthetic_case=38; variant=2",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0225",
+        "type": "ISSUE",
+        "source": "cache ttl",
+        "timestamp": "2025-02-08T14:06:00+00:00",
+        "content": "Issue: users see stale catalog data after update; cache TTL not refreshed; synthetic_case=38; variant=2",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0226",
+        "type": "LOG",
+        "source": "cache fresh",
+        "timestamp": "2025-02-08T14:08:00+00:00",
+        "content": "INFO cache invalidation completed and source data is fresh; no stale responses; synthetic_case=38; variant=2",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0227",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-02-08T14:10:00+00:00",
+        "content": "docs: update catalog API reference; synthetic_case=38; variant=2",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0228",
+        "type": "METRIC",
+        "source": "cpu",
+        "timestamp": "2025-02-08T14:12:00+00:00",
+        "content": "metric_name=cpu value=28 service=catalog-api; synthetic_case=38; variant=2",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0223",
+      "EVID-0224",
+      "EVID-0225"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0226"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0227",
+      "EVID-0228"
+    ]
+  },
+  {
+    "case_id": "SYN-039",
+    "incident": {
+      "id": "INC-SYN-039",
+      "title": "Cache Invalidation Issue investigation case 3",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "catalog-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-09T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "cache_invalidation_issue",
+    "ground_truth_terms": [
+      "cache invalidation issue",
+      "Cache Invalidation Issue",
+      "cache",
+      "invalidation",
+      "issue"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0229",
+        "type": "LOG",
+        "source": "cache stale",
+        "timestamp": "2025-02-09T14:03:00+00:00",
+        "content": "ERROR stale cache value served after invalidation event for catalog item; synthetic_case=39; variant=3",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0230",
+        "type": "METRIC",
+        "source": "cache miss",
+        "timestamp": "2025-02-09T14:05:00+00:00",
+        "content": "metric_name=cache_miss_rate value=0.01 service=catalog-api; invalidation miss rate unexpectedly low; synthetic_case=39; variant=3",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0231",
+        "type": "ISSUE",
+        "source": "cache ttl",
+        "timestamp": "2025-02-09T14:07:00+00:00",
+        "content": "Issue: users see stale catalog data after update; cache TTL not refreshed; synthetic_case=39; variant=3",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0232",
+        "type": "LOG",
+        "source": "cache fresh",
+        "timestamp": "2025-02-09T14:09:00+00:00",
+        "content": "INFO cache invalidation completed and source data is fresh; no stale responses; synthetic_case=39; variant=3",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0233",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-02-09T14:11:00+00:00",
+        "content": "docs: update catalog API reference; synthetic_case=39; variant=3",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0234",
+        "type": "METRIC",
+        "source": "cpu",
+        "timestamp": "2025-02-09T14:13:00+00:00",
+        "content": "metric_name=cpu value=28 service=catalog-api; synthetic_case=39; variant=3",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0229",
+      "EVID-0230",
+      "EVID-0231"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0232"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0233",
+      "EVID-0234"
+    ]
+  },
+  {
+    "case_id": "SYN-040",
+    "incident": {
+      "id": "INC-SYN-040",
+      "title": "Cache Invalidation Issue investigation case 4",
+      "description": "Synthetic evaluation case with relevant, contradictory, and distractor evidence.",
+      "severity": "HIGH",
+      "service": "catalog-api",
+      "endpoint": "/api/example",
+      "started_at": "2025-02-10T14:00:00+00:00",
+      "status": "RESOLVED"
+    },
+    "ground_truth": "cache_invalidation_issue",
+    "ground_truth_terms": [
+      "cache invalidation issue",
+      "Cache Invalidation Issue",
+      "cache",
+      "invalidation",
+      "issue"
+    ],
+    "evidence": [
+      {
+        "id": "EVID-0235",
+        "type": "LOG",
+        "source": "cache stale",
+        "timestamp": "2025-02-10T14:04:00+00:00",
+        "content": "ERROR stale cache value served after invalidation event for catalog item; synthetic_case=40; variant=4",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0236",
+        "type": "METRIC",
+        "source": "cache miss",
+        "timestamp": "2025-02-10T14:06:00+00:00",
+        "content": "metric_name=cache_miss_rate value=0.01 service=catalog-api; invalidation miss rate unexpectedly low; synthetic_case=40; variant=4",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0237",
+        "type": "ISSUE",
+        "source": "cache ttl",
+        "timestamp": "2025-02-10T14:08:00+00:00",
+        "content": "Issue: users see stale catalog data after update; cache TTL not refreshed; synthetic_case=40; variant=4",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0238",
+        "type": "LOG",
+        "source": "cache fresh",
+        "timestamp": "2025-02-10T14:10:00+00:00",
+        "content": "INFO cache invalidation completed and source data is fresh; no stale responses; synthetic_case=40; variant=4",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0239",
+        "type": "COMMIT",
+        "source": "documentation",
+        "timestamp": "2025-02-10T14:12:00+00:00",
+        "content": "docs: update catalog API reference; synthetic_case=40; variant=4",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "EVID-0240",
+        "type": "METRIC",
+        "source": "cpu",
+        "timestamp": "2025-02-10T14:14:00+00:00",
+        "content": "metric_name=cpu value=28 service=catalog-api; synthetic_case=40; variant=4",
+        "metadata": {
+          "service": "catalog-api",
+          "synthetic": true
+        }
+      }
+    ],
+    "supporting_evidence_ids": [
+      "EVID-0235",
+      "EVID-0236",
+      "EVID-0237"
+    ],
+    "contradictory_evidence_ids": [
+      "EVID-0238"
+    ],
+    "distractor_evidence_ids": [
+      "EVID-0239",
+      "EVID-0240"
+    ]
+  }
+]

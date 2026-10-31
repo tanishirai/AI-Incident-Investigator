@@ -1,0 +1,9 @@
+[
+  {
+    "incident_id": "INC-2024-019",
+    "title": "Checkout database query regression",
+    "error_type": "QueryTimeout",
+    "root_cause": "Missing query index after schema change",
+    "resolution": "Restore index and compare execution plan"
+  }
+]

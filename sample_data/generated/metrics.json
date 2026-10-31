@@ -1,0 +1,20 @@
+[
+  {
+    "timestamp": "2026-10-05T17:08:52+00:00",
+    "metric_name": "latency_p95_ms",
+    "value": 210,
+    "service": "checkout-api"
+  },
+  {
+    "timestamp": "2026-10-05T17:09:52+00:00",
+    "metric_name": "latency_p95_ms",
+    "value": 2430,
+    "service": "checkout-api"
+  },
+  {
+    "timestamp": "2026-10-05T17:10:52+00:00",
+    "metric_name": "db_cpu_percent",
+    "value": 18,
+    "service": "checkout-api"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "timestamp": "2026-10-05T17:09:52+00:00",
+    "service": "checkout-api",
+    "level": "INFO",
+    "message": "Checkout request completed",
+    "status_code": 200,
+    "endpoint": "/checkout"
+  },
+  {
+    "timestamp": "2026-10-05T17:10:52+00:00",
+    "service": "checkout-api",
+    "level": "ERROR",
+    "message": "database query timeout after 2800ms",
+    "error_type": "QueryTimeout",
+    "status_code": 500,
+    "endpoint": "/checkout"
+  },
+  {
+    "timestamp": "2026-10-05T17:11:52+00:00",
+    "service": "checkout-api",
+    "level": "ERROR",
+    "message": "slow query plan changed after index migration",
+    "error_type": "QueryRegression",
+    "status_code": 504,
+    "endpoint": "/checkout"
+  },
+  {
+    "timestamp": "2026-10-05T17:12:52+00:00",
+    "service": "checkout-api",
+    "level": "INFO",
+    "message": "database CPU healthy and unchanged"
+  }
+]

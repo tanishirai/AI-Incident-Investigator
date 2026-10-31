@@ -1,0 +1,10 @@
+{
+  "id": "INC-E71D965D",
+  "title": "Checkout latency spike after query change",
+  "description": "Checkout requests slow down shortly after a query optimization release.",
+  "service": "checkout-api",
+  "endpoint": "/api/example",
+  "severity": "HIGH",
+  "status": "OPEN",
+  "started_at": "2026-10-05T17:08:52+00:00"
+}

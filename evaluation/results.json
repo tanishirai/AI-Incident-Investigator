@@ -1,0 +1,56 @@
+{
+  "dataset": "synthetic",
+  "dataset_cases": 40,
+  "baseline": {
+    "cases": 40,
+    "root_cause_recall": 1.0,
+    "evidence_precision": 0.9,
+    "unsupported_claim_rate": 0.0333,
+    "contradiction_awareness": 0.8,
+    "mean_investigation_seconds": 0.000145,
+    "human_review_rate": 1.0
+  },
+  "ablation": {
+    "timeline_only": {
+      "cases": 40,
+      "root_cause_recall": 0.0,
+      "evidence_precision": 0.0,
+      "unsupported_claim_rate": 0.0,
+      "contradiction_awareness": 0.0,
+      "mean_investigation_seconds": 0.000767,
+      "human_review_rate": 1.0
+    },
+    "timeline_logs": {
+      "cases": 40,
+      "root_cause_recall": 1.0,
+      "evidence_precision": 0.9,
+      "unsupported_claim_rate": 0.0333,
+      "contradiction_awareness": 0.9,
+      "mean_investigation_seconds": 7e-05,
+      "human_review_rate": 1.0
+    },
+    "logs_commits_deployments": {
+      "cases": 40,
+      "root_cause_recall": 1.0,
+      "evidence_precision": 0.85,
+      "unsupported_claim_rate": 0.0333,
+      "contradiction_awareness": 0.9,
+      "mean_investigation_seconds": 9.1e-05,
+      "human_review_rate": 1.0
+    },
+    "all_evidence": {
+      "cases": 40,
+      "root_cause_recall": 1.0,
+      "evidence_precision": 0.9,
+      "unsupported_claim_rate": 0.0333,
+      "contradiction_awareness": 0.8,
+      "mean_investigation_seconds": 0.000145,
+      "human_review_rate": 1.0
+    }
+  },
+  "gemini": {
+    "status": "skipped",
+    "reason": "GEMINI_API_KEY is not configured."
+  },
+  "disclaimer": "Synthetic evaluation only; these results are not production performance claims."
+}

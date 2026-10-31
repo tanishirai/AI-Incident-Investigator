@@ -1,0 +1,11 @@
+[
+  {
+    "issue_id": 142,
+    "title": "Checkout query regression",
+    "body": "Latency rose after query plan optimization; compare the previous plan.",
+    "status": "open",
+    "labels": [
+      "incident"
+    ]
+  }
+]
